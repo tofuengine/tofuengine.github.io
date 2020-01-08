@@ -2,9 +2,10 @@
 
 #google_analytics: UA-NNNNNNNN-N
 
-#header_pages:
-#  - index.md
-#  - about.md
+header_pages:
+  - index.md
+  - docs.md
+  - about.md
 
 github_corner_url: https://github.com/tofuengine/tofu
 github_corner_caption: View source on GitHub
@@ -12,7 +13,7 @@ github_corner_caption: View source on GitHub
 footer: 'follow us on <a href="https://twitter.com/MarcoLizza">twitter</a>'
 
 style: dark
-#listen_for_clients_preferred_style: true # true or false (default)
+listen_for_clients_preferred_style: false
 
 plugins:
   - jekyll-seo-tag
