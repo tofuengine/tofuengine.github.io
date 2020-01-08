@@ -6,6 +6,9 @@
 #  - index.md
 #  - about.md
 
+github_corner_url: https://github.com/tofuengine/tofu
+github_corner_caption: View source on GitHub
+
 footer: 'follow us on <a href="https://twitter.com/MarcoLizza">twitter</a>'
 
 style: dark
