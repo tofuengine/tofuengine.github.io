@@ -5,10 +5,12 @@
 :root {
   --base-color: #000;
   --primary-color: #0000EE;
-  --border: dashed 1px rgba(0, 0, 0, 1);
+  --border: dashed 1px rgba(0, 0, 0, 0.9);
+  --border-pre: solid 1px rgba(191, 191, 191, 0.9);
   --selection-background: rgba(0, 0, 0, 0.99);
   --selection-text: #FFF;
   --background-color: #FFF;
+  --background-color-pre: #EEE;
   --text-color: var(--base-color);
   --placeholder-color: var(--base-color);
   --link-color: var(--base-color);

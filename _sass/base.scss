@@ -224,14 +224,13 @@ figure.highlight {
   margin: 5px 0;
 }
 pre {
-  background-color: var(--background-color);
-  border: none;
-  padding: 0;
+  background-color: var(--background-color-pre);
+  border: var(--border-pre);
+  padding: 5px;
   margin: 0;
   overflow: auto;
   font-size: $base-font-size;
   color: var(--text-color);
-  // line-height: 1.7 !important;
   font-family: $base-font-family !important;
   margin-block-start: 1em;
   margin-block-end: 1em;
