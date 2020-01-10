@@ -29,3 +29,9 @@ int main(int argc, char *argv[])
     return EXIT_SUCCESS;
 }
 ```
+
+```lua
+local Math = require("tofu.util").Math
+
+local s = Math.sin(math.pi)
+```
