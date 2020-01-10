@@ -1,5 +1,6 @@
 ---
 title: docs
+caption: docs
 layout: home
 permalink: /docs/
 ---

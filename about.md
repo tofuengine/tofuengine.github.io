@@ -1,5 +1,6 @@
 ---
 title: about
+caption: about
 layout: home
 permalink: /about/
 ---
