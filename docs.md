@@ -34,4 +34,9 @@ int main(int argc, char *argv[])
 local Math = require("tofu.util").Math
 
 local s = Math.sin(math.pi)
+
+
+
+
+
 ```
