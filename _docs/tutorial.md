@@ -8,36 +8,38 @@ permalink: /docs/tutorial/
 
 # Our First Program
 
-So, we are going to write our first program. Following a long-dated tradition we will present a welcoming message to the user (that is, ourselves).
+So, we are going to write our first program. Following a long-dated tradition, we will present a welcoming message to the user (that is, ourselves).
 
 Every **Tofu** program is built-up *at the very least* of **two files**:
 
 * `tofu.config`, and
 * `main.lua`.
 
-The first, unsurprisingly, contains the program instance parameters (e.g. display width and height). The second one, even more unsurprisingly, is the program entry-point script. For our example application we will be using this configuration file (save it as `tofu.config` in a folder of your choice).
+The first, unsurprisingly, holds the program instance parameters (e.g. display width and height). The second one, even more unsurprisingly, is the program entry-point script. For our example program, we will be using this configuration file (save it as `tofu.config` in a folder of your choice).
 
 ```ini
 title=Hello, Tofu!
-width=256
-height=64
+width=320
+height=240
 scale=0
 fullscreen=false
 exit-key-enabled=true
 ```
 
-More details on the available configuration settings can be found in the API reference. For the moment, all we need to know is that with this configuration file we are going to request a 256x64 virtual-screen that will be auto-scaled in window-mode (i.e. w/o going full-screen), with a custom title `Hello, Tofu!`, and the *exit-key* (i.e. the ESCAPE keyboard key) will be enabled.
+More details about the available configuration settings can be found in the API reference. For the moment, all we need to know is that with this configuration file we are going to request a 320x240 virtual-screen that will be auto-scaled to fit the physical display as much as possible (while retaining windowed-mode, i.e. we aren't going full-screen), we are setting the window title to `Hello, Tofu!`, and the *exit-key* (i.e. the `ESCAPE` keyboard key) will be enabled.
 
-Again, save the following script in the same folder you picked for the configuration file.
+Now it's time to tackle the program entry-point. We need to write a Lua script returning a "class" adhering to a specific prototype (more on this later). For the moment, just save the following script in the same folder you picked for the configuration file and name it `main.lua`.
 
 ```lua
 -- Include the modules we'll be using.
-local System = require("tofu.core").System
 local Canvas = require("tofu.graphics").Canvas
 local Font = require("tofu.graphics").Font
 local Class = require("tofu.util").Class
 
--- The entry point is a class, we are creating with a helper function.
+-- The entry point needs to be a *class* that exposes the method `new()`.
+-- We are creating it with an engine-provided helper function. The class can optionally
+-- provide the `__ctor()` method that will act as a constructor and will be called
+-- at the startup.
 local Main = Class.define()
 
 -- The message we are displaying, as a "constant".
@@ -65,9 +67,9 @@ function Main:render(_)
   -- Clear the virtual-screen with palette color #0.
   Canvas.clear(0)
 
-  -- We need the font (message) width and height to center it on screen.
+  -- We need the message width and height to center it on screen.
   local font_width = self.font:width(MESSAGE)
-  local font_height = self.font:height()
+  local font_height = self.font:height(MESSAGE)
 
   -- Compute vertical and horizontal position for the text.
   local x = (Canvas.width() - font_width) * 0.5
@@ -80,16 +82,18 @@ end
 return Main
 ```
 
-Now, we can finally launch the application with the following command
+Now, launch the application with the following command
 
 ```bash
 ./tofu ./hello-tofu
 ```
 
-or
+or with
 
 ```bash
 ./tofu
 ```
 
-if the `tofu.config` and `main.lua` files resides in the same folder as the engine executable.
+if the `tofu.config` and `main.lua` files both reside in the same folder as the engine executable.
+
+When you are done beholding our first program, exit by pressing the `ESCAPE` keyboard key.
