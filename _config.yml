@@ -1,17 +1,21 @@
+style: dark
+listen_for_clients_preferred_style: false
+
 google_analytics: UA-155996867-1
+
+github_corner_url: https://github.com/tofuengine/tofu
+github_corner_caption: View source on GitHub
 
 header_pages:
   - index.md
   - docs.md
   - about.md
 
-github_corner_url: https://github.com/tofuengine/tofu
-github_corner_caption: View source on GitHub
-
 footer: 'join us on <a href="https://discord.gg/CtpBfn">discord</a>'
 
-style: dark
-listen_for_clients_preferred_style: false
+collections:
+  docs:
+    output: true
 
 plugins:
   - jekyll-seo-tag
