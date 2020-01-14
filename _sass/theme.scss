@@ -227,6 +227,9 @@ textarea {
 figure.highlight {
   margin: 5px 0;
 }
+code {
+  color: var(--code-color);
+}
 pre {
   padding: 5px;
   margin: 0;
