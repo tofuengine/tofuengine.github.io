@@ -1,0 +1,84 @@
+---
+title: tutorial &#35;1
+caption: tutorial &#35;1
+layout: home
+category: docs
+permalink: /docs/tutorial-1/
+---
+
+# Spicing up a bit
+
+So far, so good... but also quite boring.
+
+Since we are using a monochrome font, let's find out how to change color dynamically.
+
+As you might have noticed, the foreground color for the font is specified in the font instance constructor `Font.default()`. The naive approach would be to create a new font with a different background/foreground every time we need it. Sure it will work, but would also be quite inefficient.
+
+A better solution is to leverage **palette shifting**, that is the dynamic remapping of colors upon drawing. In our example we are using palette color `15` as a foreground color. We will be modifying the example to that every second the text color changes across the whole palette.
+
+```lua
+-- Include the modules we'll be using.
+local System = require("tofu.core").System
+local Canvas = require("tofu.graphics").Canvas
+local Font = require("tofu.graphics").Font
+local Class = require("tofu.util").Class
+
+-- The entry point needs to be a *class* that exposes the method `new()`.
+-- We are creating it with an engine-provided helper function. The class can optionally
+-- provide the `__ctor()` method that will act as a constructor and will be called
+-- at the startup.
+local Main = Class.define()
+
+-- The message we are displaying, as a "constant".
+local MESSAGE = "Hello, Tofu!"
+
+function Main:__ctor()
+  -- Load a predefined palette, we choose Pico-8's one.
+  Canvas.palette("pico-8")
+
+  -- Create a default font, palette color `0` as background and `15` as foreground.
+  -- Please note that, as default, palette color `0` is set as transparent. This
+  -- means that the font background color won't be drawn.
+  self.font = Font.default(0, 15)
+end
+
+function Main:input()
+  -- Nothing to do, here.
+end
+
+function Main:update(_)
+  -- Ditto.
+end
+
+function Main:render(_)
+  -- Query current time since the start, expressed in seconds (as a floating point number).
+  local t = System.time()
+
+  -- Convert the time to an integer, then instruct the engine that color `15` need to be
+  -- remapped to color `index`.
+  local index = tonumber(t) % 16
+  Canvas.shift(15, index)
+
+  -- Clear the virtual-screen with default background color (i.e. palette color #0).
+  Canvas.clear()
+
+  -- We need the message width and height to center it on screen.
+  local font_width = self.font:width(MESSAGE)
+  local font_height = self.font:height(MESSAGE)
+
+  -- Compute vertical and horizontal position for the text.
+  local x = (Canvas.width() - font_width) * 0.5
+  local y = (Canvas.height() - font_height) * 0.5
+
+  -- Finally, draw the message on-screen at the given position.
+  self.font:write(MESSAGE, x, y)
+end
+
+return Main
+```
+
+Please note that we are not required pass a color in the range `[0, 15]` (remember, we are using 16 colors palette), as the engine automatically filters it with a modulo operator (i.e. color index `16` will be interpreted as color index `0`).
+
+Once a palette color as been "shifted" it remains such as long as it's changed again or the `Canvas.reset()` function is called (which reset the drawing context to the initial state). In the next tutorial we will learn how to selectively shift colors without interfering with other draw operations.
+
+[continue >>](/docs/tutorial-2)

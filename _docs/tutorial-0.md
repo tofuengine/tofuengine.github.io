@@ -1,9 +1,9 @@
 ---
-title: tutorial
-caption: tutorial
+title: tutorial &#35;0
+caption: tutorial &#35;0
 layout: home
 category: docs
-permalink: /docs/tutorial/
+permalink: /docs/tutorial-0/
 ---
 
 # Our First Program
@@ -26,9 +26,9 @@ fullscreen=false
 exit-key-enabled=true
 ```
 
-More details about the available configuration settings can be found in the API reference. For the moment, all we need to know is that with this configuration file we are going to request a 320x240 virtual-screen that will be auto-scaled to fit the physical display as much as possible (while retaining windowed-mode, i.e. we aren't going full-screen), we are setting the window title to `Hello, Tofu!`, and the *exit-key* (i.e. the `ESCAPE` keyboard key) will be enabled.
+More details about the available configuration settings can be found in the [reference](/docs/configuration-file). For the moment, all we need to know is that with this configuration file we are going to request a `320x240` virtual-screen that will be auto-scaled to fit the physical display as much as possible (while retaining windowed-mode, i.e. we aren't going full-screen), window-title will be set to `Hello, Tofu!`, and *exit-key* (i.e. the `ESCAPE` keyboard key) will be enabled.
 
-Now it's time to tackle the program entry-point. We need to write a Lua script returning a "class" adhering to a specific prototype (more on this later). For the moment, just save the following script in the same folder you picked for the configuration file and name it `main.lua`.
+Now it's time to tackle the program entry-point. We need to write a Lua script returning a "class" adhering to a specific prototype (more on this [later](/docs/entry-point)). For the moment, just save the following script in the same folder you picked for the configuration file and name it `main.lua`.
 
 ```lua
 -- Include the modules we'll be using.
@@ -64,8 +64,8 @@ function Main:update(_)
 end
 
 function Main:render(_)
-  -- Clear the virtual-screen with palette color #0.
-  Canvas.clear(0)
+  -- Clear the virtual-screen with default background color (i.e. palette color #0).
+  Canvas.clear()
 
   -- We need the message width and height to center it on screen.
   local font_width = self.font:width(MESSAGE)
@@ -97,3 +97,5 @@ or with
 if the `tofu.config` and `main.lua` files both reside in the same folder as the engine executable.
 
 When you are done beholding our first program, exit by pressing the `ESCAPE` keyboard key.
+
+[continue >>](/docs/tutorial-1)
