@@ -81,4 +81,33 @@ Please note that we are not required pass a color in the range `[0, 15]` (rememb
 
 Once a palette color as been "shifted" it remains such as long as it's changed again or the `Canvas.reset()` function is called (which reset the drawing context to the initial state). In the next tutorial we will learn how to selectively shift colors without interfering with other draw operations.
 
+In the above code, we have explicitly calculated the target position of the text. Not a rocket-science problem, but
+it can rapidly become a hassle to do repeatedly. For this purpose, the engine comes in aid by providing a text
+alignment facility. We can align vertically/horizontally the text pivoting it around a specific point. Also note that
+we don't need to calculate the canvas center position by ourselves, but use the `Canvas.center()` function.
+
+```lua
+function Main:render(_)
+  -- Query current time since the start, expressed in seconds (as a floating point number).
+  local t = System.time()
+
+  -- Convert the time to an integer, then instruct the engine that color `15` need to be
+  -- remapped to color `index`.
+  local index = tonumber(t) % 16
+  Canvas.shift(15, index)
+
+  -- Clear the virtual-screen with default background color (i.e. palette color #0).
+  Canvas.clear()
+
+  -- Ask for the center position, which the canvas can provide ready-to-be-used.
+  local x, y = Canvas.center()
+
+  -- Finally, draw the message on-screen at the given position, centering both
+  -- vertically and horizontally.
+  self.font:write(self.font:align(MESSAGE, x, y, "center", "middle"))
+end
+```
+
+In the next tutorial we will be customizing the font.
+
 [continue >>](/docs/tutorial-2)
