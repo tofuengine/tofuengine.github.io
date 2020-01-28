@@ -33,13 +33,11 @@ Now it's time to tackle the program entry-point. We need to write a Lua script r
 ```lua
 -- Include the modules we'll be using.
 local Canvas = require("tofu.graphics").Canvas
+local Display = require("tofu.graphics").Display
 local Font = require("tofu.graphics").Font
 local Class = require("tofu.util").Class
 
--- The entry point needs to be a *class* that exposes the method `new()`.
--- We are creating it with an engine-provided helper function. The class can optionally
--- provide the `__ctor()` method that will act as a constructor and will be called
--- at the startup.
+-- The entry point is a class, we are creating with a helper function.
 local Main = Class.define()
 
 -- The message we are displaying, as a "constant".
@@ -47,7 +45,7 @@ local MESSAGE = "Hello, Tofu!"
 
 function Main:__ctor()
   -- Load a predefined palette, we choose Pico-8's one.
-  Canvas.palette("pico-8")
+  Display.palette("pico-8")
 
   -- Create a default font, palette color `0` as background and `15` as foreground.
   -- Please note that, as default, palette color `0` is set as transparent. This
@@ -64,16 +62,21 @@ function Main:update(_)
 end
 
 function Main:render(_)
-  -- Clear the virtual-screen with default background color (i.e. palette color #0).
-  Canvas.clear()
+  -- Get a reference to the default canvas (i.e. the the virtual-screen)...
+  local canvas = Canvas.default()
 
-  -- We need the message width and height to center it on screen.
-  local font_width = self.font:width(MESSAGE)
-  local font_height = self.font:height(MESSAGE)
+  -- ... and clear it w/ default background palette color (i.e. palette index #0).
+  canvas:clear()
+
+  -- Get the canvas width and height.
+  local canvas_width, canvas_height = canvas:size()
+
+  -- We need the font (message) width and height to center it on screen.
+  local text_width, text_height = self.font:size(MESSAGE)
 
   -- Compute vertical and horizontal position for the text.
-  local x = (Canvas.width() - font_width) * 0.5
-  local y = (Canvas.height() - font_height) * 0.5
+  local x = (canvas_width - text_width) * 0.5
+  local y = (canvas_height - text_height) * 0.5
 
   -- Finally, draw the message on-screen at the given position.
   self.font:write(MESSAGE, x, y)

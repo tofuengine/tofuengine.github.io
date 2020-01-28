@@ -20,13 +20,11 @@ A better solution is to leverage **palette shifting**, that is the dynamic remap
 -- Include the modules we'll be using.
 local System = require("tofu.core").System
 local Canvas = require("tofu.graphics").Canvas
+local Display = require("tofu.graphics").Display
 local Font = require("tofu.graphics").Font
 local Class = require("tofu.util").Class
 
--- The entry point needs to be a *class* that exposes the method `new()`.
--- We are creating it with an engine-provided helper function. The class can optionally
--- provide the `__ctor()` method that will act as a constructor and will be called
--- at the startup.
+-- The entry point is a class, we are creating with a helper function.
 local Main = Class.define()
 
 -- The message we are displaying, as a "constant".
@@ -34,7 +32,7 @@ local MESSAGE = "Hello, Tofu!"
 
 function Main:__ctor()
   -- Load a predefined palette, we choose Pico-8's one.
-  Canvas.palette("pico-8")
+  Display.palette("pico-8")
 
   -- Create a default font, palette color `0` as background and `15` as foreground.
   -- Please note that, as default, palette color `0` is set as transparent. This
@@ -51,24 +49,29 @@ function Main:update(_)
 end
 
 function Main:render(_)
+  -- Get a reference to the default canvas (i.e. the the virtual-screen).
+  local canvas = Canvas.default()
+
   -- Query current time since the start, expressed in seconds (as a floating point number).
   local t = System.time()
 
   -- Convert the time to an integer, then instruct the engine that color `15` need to be
   -- remapped to color `index`.
   local index = tonumber(t) % 16
-  Canvas.shift(15, index)
+  canvas:shift(15, index)
 
   -- Clear the virtual-screen with default background color (i.e. palette color #0).
-  Canvas.clear()
+  canvas:clear()
 
-  -- We need the message width and height to center it on screen.
-  local font_width = self.font:width(MESSAGE)
-  local font_height = self.font:height(MESSAGE)
+  -- Get the canvas width and height.
+  local canvas_width, canvas_height = canvas:size()
+
+  -- We need the font (message) width and height to center it on screen.
+  local text_width, text_height = self.font:size(MESSAGE)
 
   -- Compute vertical and horizontal position for the text.
-  local x = (Canvas.width() - font_width) * 0.5
-  local y = (Canvas.height() - font_height) * 0.5
+  local x = (canvas_width - text_width) * 0.5
+  local y = (canvas_height - text_height) * 0.5
 
   -- Finally, draw the message on-screen at the given position.
   self.font:write(MESSAGE, x, y)
@@ -79,28 +82,31 @@ return Main
 
 Please note that we are not required pass a color in the range `[0, 15]` (remember, we are using 16 colors palette), as the engine automatically filters it with a modulo operator (i.e. color index `16` will be interpreted as color index `0`).
 
-Once a palette color as been "shifted" it remains such as long as it's changed again or the `Canvas.reset()` function is called (which reset the drawing context to the initial state). In the next tutorial we will learn how to selectively shift colors without interfering with other draw operations.
+Once a palette color as been "shifted", the change remain active as long as it's changed again or the `Canvas.reset()` function is called (which reset the drawing context to the initial state). In the next tutorial we will learn how to selectively shift colors without interfering with other draw operations.
 
 In the above code, we have explicitly calculated the target position of the text. Not a rocket-science problem, but
 it can rapidly become a hassle to do repeatedly. For this purpose, the engine comes in aid by providing a text
 alignment facility. We can align vertically/horizontally the text pivoting it around a specific point. Also note that
-we don't need to calculate the canvas center position by ourselves, but use the `Canvas.center()` function.
+we don't need to calculate the canvas center position by ourselves, but use the `Canvas.center()` method.
 
 ```lua
 function Main:render(_)
+  -- Get a reference to the default canvas (i.e. the the virtual-screen).
+  local canvas = Canvas.default()
+
   -- Query current time since the start, expressed in seconds (as a floating point number).
   local t = System.time()
 
   -- Convert the time to an integer, then instruct the engine that color `15` need to be
   -- remapped to color `index`.
   local index = tonumber(t) % 16
-  Canvas.shift(15, index)
+  canvas:shift(15, index)
 
   -- Clear the virtual-screen with default background color (i.e. palette color #0).
-  Canvas.clear()
+  canvas:clear()
 
   -- Ask for the center position, which the canvas can provide ready-to-be-used.
-  local x, y = Canvas.center()
+  local x, y = canvas:center()
 
   -- Finally, draw the message on-screen at the given position, centering both
   -- vertically and horizontally.
