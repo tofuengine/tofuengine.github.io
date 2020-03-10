@@ -5,7 +5,9 @@ layout: home
 permalink: /
 ---
 
-# Lorem ipsum
+<p align="center">
+  <img src="/assets/images/tofu-console-dark.png" alt="Tofu Engine" />
+</p>
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Nisi scelerisque eu ultrices vitae auctor eu augue ut lectus. Vestibulum morbi blandit cursus risus. Eget nulla facilisi etiam dignissim diam quis enim lobortis. Ipsum a arcu cursus vitae congue mauris rhoncus aenean. Lacus vel facilisis volutpat est velit. Adipiscing diam donec adipiscing tristique risus. Rutrum quisque non tellus orci. Sit amet facilisis magna etiam tempor orci. Mattis vulputate enim nulla aliquet porttitor lacus luctus. Pulvinar mattis nunc sed blandit libero volutpat sed cras ornare. Velit dignissim sodales ut eu sem integer vitae justo eget. Nullam vehicula ipsum a arcu cursus vitae. Venenatis lectus magna fringilla urna porttitor rhoncus. Malesuada bibendum arcu vitae elementum curabitur vitae nunc sed. Turpis tincidunt id aliquet risus feugiat in ante metus. Molestie nunc non blandit massa enim nec. Cras adipiscing enim eu turpis egestas. Praesent semper feugiat nibh sed pulvinar proin gravida.
 
