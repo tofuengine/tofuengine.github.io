@@ -84,10 +84,7 @@ Please note that we are not required pass a color in the range `[0, 15]` (rememb
 
 Once a palette color as been "shifted", the change remain active as long as it's changed again or the `Canvas.reset()` function is called (which reset the drawing context to the initial state). In the next tutorial we will learn how to selectively shift colors without interfering with other draw operations.
 
-In the above code, we have explicitly calculated the target position of the text. Not a rocket-science problem, but
-it can rapidly become a hassle to do repeatedly. For this purpose, the engine comes in aid by providing a text
-alignment facility. We can align vertically/horizontally the text pivoting it around a specific point. Also note that
-we don't need to calculate the canvas center position by ourselves, but use the `Canvas.center()` method.
+In the above code, we have explicitly calculated the target position of the text. Not a rocket-science problem, but it can rapidly become a hassle when done repeatedly. For this purpose, the engine comes in aid by providing a text alignment feature. We can align vertically/horizontally the text pivoting it around a specific point. Also note that we don't need to calculate the canvas center position by ourselves, but we can use the `Canvas.center()` method.
 
 ```lua
 function Main:render(_)
