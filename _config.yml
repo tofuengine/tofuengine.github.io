@@ -8,8 +8,9 @@ github_corner_caption: View source on GitHub
 
 header_pages:
   - index.md
-  - docs.md
   - about.md
+  - docs.md
+  - roadmap.md
 
 footer: 'join us on <a href="https://discord.gg/CtpBfn">discord</a>'
 
