@@ -1,16 +1,10 @@
 ---
 title: Home
-author: marco.lizza
-layout: page
+layout: default
 permalink: /
 ---
-# Hello, World!
+Tofu Engine is a (work-in-progress) free and open self-contained game-engine suitable for small 2D projects.
 
-Stay a while, stay forever!
+---
 
-# Sample code
-
-```lua
-local f = function() end
-local y = f(10)
-```
+It will be available for Windows, Linux, and Raspberry-PI. A MacOS version may eventually come in the future.

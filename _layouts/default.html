@@ -3,11 +3,16 @@
 
   {% include head.html %}
 
-  <body id="top"{% if page.type %} class="{{ page.type }}"{% endif %}>
+  <body id="top">
     {% include header.html %}
 
-    {{ content }}
-
+    <div class="page">
+      {% include navbar.html %}
+      <main>
+        {{ content }}
+      </main>
+    </div>
+    
     {% include footer.html %}
 
   </body>

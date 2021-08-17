@@ -1,42 +1,46 @@
-<nav class="big">
+<nav>
   <a href="{{ site.baseurl }}/"><img src="{{ site.logo_url }}" class="logo" alt="{{ site.title }}" /></a>
   <ul>
-    {% if page.type %}
+    {% if page.category %}
     <li><a href="{{ site.baseurl }}/">Home</a></li>
-    {% endif %}
-    {% if page.type != "module" %}
-    <li><a href="{{ '/modules' | prepend: site.baseurl | prepend: site.url }}">Reference</a></li>
-    {% endif %}
-    {% if page.type != "guide" %}
-    <li><a href="{{ '/guides' | prepend: site.baseurl | prepend: site.url }}">Getting Started</a></li>
     {% endif %}
     <li><a href="{{ '/devlog' | prepend: site.baseurl | prepend: site.url }}">DevLog</a></li>
   </ul>
-  {% if page.type == "guide" %}
   <section>
     <h2>guides</h2>
     <ul>
-      {% for guide in site.data.guides %}
+    {% assign guides = site.pages | sort:"order" %}
+    {% for page in guides %}
+    {% if page.category == "guide" %}
       <li>
-        <a href="{{ guide.url | prepend: site.baseurl | prepend: site.url }}">
-          {{ guide.title }}
+        <a href="{{ page.url | prepend: site.baseurl | prepend: site.url }}">
+          {{ page.title }}
         </a>
       </li>
+    {% endif %}
     {% endfor %}
     </ul>
   </section>
-  {% elsif page.type == "module" %}
   <section>
     <h2>modules</h2>
+    {% for page in site.pages %}
+    {% if page.category == "module" %}
+    {% capture current_ns %}{{ page.namespace }}{% endcapture %}
+    {% if current_ns != previous_ns %}
+    {% if previous_ns %}
+    </ul>
+    {% endif %}
     <ul>
-      {% for module in site.data.modules %}
-      <li>
-        <a href="{{ module.url | prepend: site.baseurl | prepend: site.url }}">
-          {{ module.title }}
-        </a>
-      </li>
+    <h3>{{ current_ns }}</h3>
+    {% endif %}
+    <li>
+      <a href="{{ page.url | prepend: site.baseurl | prepend: site.url }}">
+        {{ page.title }}
+      </a>
+    </li>
+    {% capture previous_ns %}{{ current_ns }}{% endcapture %}
+    {% endif %}
     {% endfor %}
     </ul>
   </section>
-  {% endif %}
 </nav>

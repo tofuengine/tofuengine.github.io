@@ -17,13 +17,11 @@
   --gray-50: #9c9fa2;
   --gray-60: #888c90;
   --gray-80: #60666a;
-  --link: hsl(200, 60%, 50%);
-  --link-dark: hsl(210, 60%, 20%);
-  --link-hover: hsl(210, 100%, 80%);
-  --link: hsl(200, 60%, 50%);
-  --module-link-dark: hsl(160, 60%, 25%);
-  --module-link-hover: hsl(130, 70%, 70%);
-  --module-link: hsl(150, 70%, 40%);
+  --link-dark: hsl(160, 60%, 25%);
+  --link-hover: hsl(130, 70%, 70%);
+  --link: hsl(150, 70%, 40%);
+  --tofu: rgb(249, 249, 249);
+  --paper: rgb(31, 31, 31);
 }
 
 * {
@@ -95,16 +93,15 @@ main {
 }
 
 .logo {
-  height: 7em;
+  width: 10em;
   position: relative;
   margin: auto;
   display: block;
-  left: -1em;
   margin-bottom: 2em;
 }
 
 header {
-  background: var(--light);
+  background: var(--tofu);
   border-bottom: solid 1px var(--gray-10);
 }
 
@@ -156,13 +153,24 @@ nav h2 {
   margin: 0;
 }
 
+nav h3 {
+  color: var(--gray-80);
+  font: 500 11px var(--subheader);
+  text-transform: lowercase;
+  font-style: italic;
+  letter-spacing: 2px;
+  padding-top: 0.25em;
+  float: right;
+  margin: 0;
+}
+
 nav ul {
   padding: 0;
   margin: 6px 0 20px 0;
 }
 
 nav li {
-  font: 17px var(--body);
+  font: 15px var(--body);
   color: var(--gray-30);
   list-style-type: none;
   margin: 0 0 4px 0;
@@ -252,6 +260,10 @@ p + p {
   margin-top: 20px;
 }
 
+div .highlighter-rouge {
+  margin: .5em 0;
+}
+
 code,
 pre {
   background-color: var(--code-bg) !important;
@@ -276,7 +288,7 @@ footer {
   margin-top: 4em;
   padding: 20px 0 40px 0;
   font: 14px var(--body);
-  background: var(--dark);
+  background: var(--paper);
   color: var(--gray-20);
   border-top: solid 1px var(--darker);
   text-align: center;
@@ -293,50 +305,6 @@ footer a:hover {
 
 .right {
   float: right;
-}
-
-/* Have a different primary color for the module docs.*/
-body.module header a {
-  color: var(--gray-80);
-}
-
-body.module header a:hover {
-  color: var(--module-link-hover);
-}
-
-body.module a {
-  color: var(--module-link);
-}
-
-body.module a:hover {
-  color: var(--module-link-dark);
-}
-
-body.module .header-anchor {
-  color: var(--light);
-}
-
-body.module footer a {
-  color: var(--module-link-hover);
-}
-
-body.module footer a:hover {
-  color: var(--module-link);
-}
-
-body.module main h1 {
-  color: var(--module-link);
-}
-body.module main h2 {
-  color: var(--module-link);
-}
-body.module main h3 {
-  color: var(--module-link);
-}
-
-body.module main h2:hover > .header-anchor:hover,
-body.module main h3:hover > .header-anchor:hover {
-  color: var(--module-link-dark);
 }
 
 /* Try related stuff */
@@ -439,55 +407,6 @@ td {
   font-size: 14px;
   line-height: 20px;
   text-align: left;
-}
-
-/* Bar charts on the performance page.*/
-table.chart {
-  margin: 4px 0 0 0;
-  padding: 5px 0 5px 25px;
-}
-
-table.chart td,
-th {
-  line-height: 14px;
-  margin: 0;
-  padding: 1px 0;
-}
-
-table.chart th {
-  font-size: 14px;
-  width: 100px;
-}
-
-table.chart .chart-bar {
-  display: inline-block;
-  font: 13px var(--body);
-  color: var(--light);
-  background: var(--link);
-  border-bottom: solid 1px var(--link-dark);
-  text-align: right;
-  border-radius: 2px;
-}
-
-table.chart .chart-bar.wren {
-  background: #1d5176;
-  border-bottom: solid 1px var(--link-dark);
-}
-
-/* Precedence table on expressions page.*/
-table.precedence th {
-  font: 500 11px var(--subheader);
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: var(--gray-60);
-
-  padding: 6px 0;
-  border-bottom: solid 1px var(--gray-10);
-}
-
-table.precedence td {
-  padding: 3px 0;
-  border-bottom: solid 1px var(--gray-10);
 }
 
 /*
