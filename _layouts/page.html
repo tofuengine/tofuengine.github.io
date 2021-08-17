@@ -2,13 +2,7 @@
 layout: default
 ---
 <div class="page">
-  {% if page.type == "module" %}
-  {% include navbar-module.html %}
-  {% elsif page.type == "guide" %}
-  {% include navbar-guide.html %}
-  {% else %}
   {% include navbar.html %}
-  {% endif %}
   <main>
     {{ content }}
   </main>
