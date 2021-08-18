@@ -5,21 +5,17 @@ namespace: tofu.util
 title: Arrays
 permalink: /modules/tofu.util/Arrays/
 ---
-# tofu.util.**Arrays**
+# Usage
 
 ```lua
 local Math = require("tofu.core").Math
 ```
-
----
 
 ## Constants
 
 ### Math.**SINCOS_PERIOD**
 
 ### Math.**EPSILON**
-
----
 
 ## Functions
 

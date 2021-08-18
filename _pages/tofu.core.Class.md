@@ -5,13 +5,11 @@ namespace: tofu.core
 title: Class
 permalink: /modules/tofu.core/Class/
 ---
-# tofu.core.Class
+# Usage
 
 ```lua
 local Class = require("tofu.core").Class
 ```
-
----
 
 ## Functions
 
@@ -34,6 +32,8 @@ end
 
 return Counter
 ```
+
+> Please note that this is just a silly example!
 
 ### Class.**implement**(proto, model)
 

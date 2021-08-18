@@ -5,13 +5,11 @@ namespace: tofu.core
 title: System
 permalink: /modules/tofu.core/System/
 ---
-# tofu.core.System
+# Usage
 
 ```lua
 local System = require("tofu.core").System
 ```
-
----
 
 ## Functions
 

@@ -1,9 +1,9 @@
 :root {
   --header-h: 8em;
-  --header: "Sanchez", helvetica, arial, sans-serif;
-  --subheader: "Lato", helvetica, arial, sans-serif;
+  --header: "Noto Sans", helvetica, arial, sans-serif;
+  --subheader: "Noto Sans", helvetica, arial, sans-serif;
   --code: "Source Code Pro", Menlo, Monaco, Consolas, monospace;
-  --body: "Source Sans Pro", georgia, serif;
+  --body: "Noto Sans", helvetica, arial, sans-serif;
   --code-bg: hsl(210, 0%, 99%);
   --dark: hsl(210, 10%, 25%);
   --darker: hsl(210, 20%, 10%);
@@ -17,9 +17,9 @@
   --gray-50: #9c9fa2;
   --gray-60: #888c90;
   --gray-80: #60666a;
-  --link-dark: hsl(160, 60%, 25%);
-  --link-hover: hsl(130, 70%, 70%);
-  --link: hsl(150, 70%, 40%);
+  --link-dark: hsl(290, 60%, 25%);
+  --link-hover: hsl(260, 70%, 70%);
+  --link: hsl(280, 70%, 40%);
   --tofu: rgb(249, 249, 249);
   --paper: rgb(31, 31, 31);
 }
@@ -76,7 +76,7 @@ date {
 
 .page {
   margin: 0 auto;
-  width: 800px;
+  width: 1100px;
   min-height: calc(100% - 16.75em);
 }
 /* Clear contents.*/
@@ -89,7 +89,9 @@ date {
 .main-column,
 main {
   position: relative;
-  width: 560px;
+  width: 800px;
+  border-left: solid 1px var(--gray-10);
+  padding-left: 2em;
 }
 
 .logo {
@@ -97,7 +99,6 @@ main {
   position: relative;
   margin: auto;
   display: block;
-  margin-bottom: 2em;
 }
 
 header {
@@ -140,14 +141,15 @@ header .page {
 }
 
 nav {
-  float: right;
-  width: 160px;
+  float: left;
+  width: 300px;
   margin-top: 2em;
+  padding: 1em;
 }
 
 nav h2 {
   color: var(--gray-80);
-  font: 500 13px var(--subheader);
+  font: 500 14px var(--subheader);
   text-transform: uppercase;
   letter-spacing: 2px;
   margin: 0;
@@ -155,11 +157,12 @@ nav h2 {
 
 nav h3 {
   color: var(--gray-80);
-  font: 500 11px var(--subheader);
+  font: 500 12px var(--subheader);
   text-transform: lowercase;
   font-style: italic;
   letter-spacing: 2px;
   padding-top: 0.25em;
+  padding-right: 1em;
   float: right;
   margin: 0;
 }
@@ -170,7 +173,7 @@ nav ul {
 }
 
 nav li {
-  font: 15px var(--body);
+  font: 14px var(--body);
   color: var(--gray-30);
   list-style-type: none;
   margin: 0 0 4px 0;
@@ -198,7 +201,7 @@ h2 code {
 }
 
 h3 {
-  font: 20px var(--body);
+  font: 18px var(--body);
   margin: 24px 0 0 0;
   color: var(--link);
 }
@@ -231,7 +234,8 @@ main .intro {
 main h2 {
   display: block;
   position: relative;
-  max-width: 16em;
+  padding-bottom: 0.5em;
+  border-bottom: solid 1px var(--gray-10);
 }
 
 a:hover {
@@ -307,90 +311,6 @@ footer a:hover {
   float: right;
 }
 
-/* Try related stuff */
-
-.buttons {
-  z-index: 2;
-  right: 0;
-  display: block;
-  position: absolute;
-  font-size: 1.3em;
-  letter-spacing: 0.05em;
-  margin-top: -1.25em;
-}
-.button {
-  margin-right: 0.25em;
-  display: inline-block;
-  text-align: right;
-}
-
-#examples {
-  margin-bottom: 1em;
-}
-
-#try-area {
-  margin-bottom: 1em;
-}
-
-#try-area p {
-  margin-left: 0.2em;
-  color: var(--gray-50);
-  font-size: 0.9em;
-  margin-bottom: -0.1em;
-}
-
-#try-output {
-  scrollbar-width: thin;
-  white-space: pre;
-  overflow-x: auto;
-  font-family: var(--code);
-  font-size: 1em;
-  line-height: 1.25em;
-}
-
-#try-result {
-  display: block;
-  margin-top: 1.4em;
-  position: absolute;
-  right: 0;
-}
-
-#try-result.error {
-  color: #c00;
-  font-weight: bold;
-}
-
-span.token.error {
-  color: #c00;
-}
-
-.codejar-linenumbers {
-  background-color: #f9f9f9 !important;
-  border-left: solid 1px hsl(200, 20%, 88%);
-  border-top: solid 1px hsl(200, 20%, 88%);
-  border-bottom: solid 1px hsl(200, 20%, 88%);
-  color: #d9d9d9 !important;
-  mix-blend-mode: normal !important;
-  width: 2.5em !important;
-  text-align: right !important;
-  padding-left: 0 !important;
-  padding-right: 0.5em !important;
-}
-
-#try-code {
-  scrollbar-width: thin;
-  border-radius: 0.01em;
-  border: solid 1px hsl(200, 20%, 88%);
-  font-family: "Source Code Pro", monospace;
-  font-size: 14px;
-  font-weight: 400;
-  height: auto;
-  letter-spacing: normal;
-  line-height: 1.5em;
-  padding: 1em;
-  tab-size: 2;
-}
-
 table {
   width: 100%;
   border-collapse: collapse;
@@ -407,152 +327,4 @@ td {
   font-size: 14px;
   line-height: 20px;
   text-align: left;
-}
-
-/*
-  Sourced from https://github.com/microsoft/TypeScript-Website/blob/e9d8f66f6b8be2dda06737d3686dcb795749dff2/packages/typescriptlang-org/src/templates/play.scss#L916-L943.
-  Licensed under the MIT license https://github.com/microsoft/TypeScript-Website/blob/e9d8f66f6b8be2dda06737d3686dcb795749dff2/LICENSE-CODE.
-  */
-#copied-popup {
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  position: fixed;
-  z-index: 100;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  pointer-events: none;
-}
-
-#copied-popup p {
-  background-color: rgba(0, 0, 0, 0.8);
-  color: white;
-  padding: 20px;
-  font-size: 1.5rem;
-
-  border-radius: 1em;
-  padding: 0.5em 1.5em;
-  opacity: 0;
-
-  transition: opacity 0.1s ease-in-out;
-
-  /* Help Safari with blurred text */
-  transform: translateZ(0);
-}
-
-@media only screen and (max-width: 839px) {
-  /* 36 pixel columns.*/
-  .page {
-    width: 720px;
-  }
-  nav {
-    width: 144px;
-  }
-  .main-column,
-  main {
-    width: 504px;
-  }
-  .footer-column,
-  main {
-    width: 100%px;
-  }
-}
-
-@media only screen and (max-width: 759px) {
-  /* 32 pixel columns.*/
-  .page {
-    width: 640px;
-  }
-  nav {
-    width: 128px;
-  }
-  .main-column,
-  main {
-    width: 448px;
-  }
-  .footer-column,
-  main {
-    width: 100%px;
-  }
-}
-
-@media only screen and (max-width: 679px) {
-  /* 28 pixel columns.*/
-  .page {
-    width: 560px;
-  }
-  nav {
-    width: 112px;
-  }
-  .main-column,
-  main {
-    width: 392px;
-  }
-  .footer-column,
-  main {
-    width: 100%px;
-  }
-
-  header h2 {
-    font-size: 12px;
-    letter-spacing: 1px;
-  }
-}
-
-@media only screen and (max-width: 639px) {
-  .page {
-    width: 100%;
-  }
-  .buttons {
-    margin-right: 1em;
-  }
-  #try-result {
-    margin-right: 1.5em;
-  }
-
-  /* Switch to the mobile navigation.*/
-  nav {
-    display: none;
-  }
-
-  .main-column,
-  main {
-    padding: 0 20px;
-    width: 100%;
-  }
-  .footer-column,
-  main {
-    width: 100%px;
-  }
-
-  header h1 {
-    position: relative;
-    top: 10px;
-    left: 0;
-    text-align: center;
-  }
-
-  header h2 {
-    position: relative;
-    top: 0;
-    right: 0;
-    text-align: center;
-    font-size: 13px;
-    letter-spacing: 2px;
-  }
-
-  main {
-    float: none;
-    width: 100%;
-  }
-
-  pre {
-    font-size: 13px;
-  }
-
-  footer {
-    padding: 20px 20px 40px 20px;
-  }
 }

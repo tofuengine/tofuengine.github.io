@@ -5,13 +5,11 @@ namespace: tofu.core
 title: Math
 permalink: /modules/tofu.core/Math/
 ---
-# tofu.core.Math
+# Usage
 
 ```lua
 local Math = require("tofu.core").Math
 ```
-
----
 
 ## Constants
 
@@ -20,8 +18,6 @@ local Math = require("tofu.core").Math
 ### Math.**EPSILON**
 
 `__FLT_EPSILON__`
-
----
 
 ## Functions
 
