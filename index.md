@@ -7,18 +7,20 @@ permalink: /
 
 **Tofu Engine** is a *free and open* self-contained game-engine suitable for small-to-mid 2D projects.
 
-The engine can be considered a *perpetual work-in-progress* project of mine, with continuous additional features and updates. The *core* API, however, can be considered stable. 
+It is entirely **self-contained**, as no additional runtime modules/libraries required (system-wide libraries excluded). Everything is bundled in the engine executable.
 
-## Highlights
+It has been developed entirely in C99 (and some Lua scripts) on Linux, aiming to be as portable as possibile. This resulted in being **multi-platform** through *cross-compilation* (Windows, Linux and [Raspberry-Pi](https://www.raspberrypi.org/) systems are supported -- macOS isn't currently not, possibly WebAssembly will be in a not so distant future).
 
-* Carefully crafted C99 code.
-* Self-contained, no additional runtime modules/libraries required (system-wide libraries excluded).
-* Multi-platform support through cross-compilation (Windows, Linux and [Raspberry-Pi](https://www.raspberrypi.org/) -- macOS is currently not supported, possibly WebAssembly in the not so distant future).
+The engine is in *perpetual work-in-progress* state, with new features being added and updates being applied. The *core* API, however, can be considered stable. 
+
+## Inspirations
+
+**Tofu Engine** is an *original software*, result of the experience gained from ~30 years in programming on a broad range of platforms (some concept even stems back to *ancient* platforms like the [Amiga](https://en.wikipedia.org/wiki/Amiga) and the [SNES](https://en.wikipedia.org/wiki/Super_Nintendo_Entertainment_System), and *arcane* languages like [AMOS](https://en.wikipedia.org/wiki/AMOS_(programming_language)) and [Blitz BASIC 2](https://en.wikipedia.org/wiki/Blitz_BASIC)). However, it has also been influenced by modern similar/other softwares in one way or another.
 
 ## Features
 
 * Fully scripted in [Lua](https://www.lua.org/).
-* Straight multimedia support, no intermediate third-party libraries (OpenGL 2.1 required).
+* Straight multimedia support, no intermediate third-party libraries ([OpenGL 2.1](https://en.wikipedia.org/wiki/OpenGL) required).
 * Windowed/fullscreen display with best-fit integer automatic scaling.
 * Internal software renderer. OpenGL is used only to present the framebuffer to the user (and apply post-process effects).
 * Fixed- and variable-size *Blitter OBjects* drawing with rotation/scaling/flipping.
@@ -52,13 +54,9 @@ The engine can be considered a *perpetual work-in-progress* project of mine, wit
 * Framebuffer offsetting (e.g. for screen-shaking effect).
 * Out-of-the-box 'tweening functions support (optimized [Penner's](http://robertpenner.com/easing/) set).
 * Logging facility (w/ selectable severity level).
-* Run-time signature check for Lua's API functions (debug build). Also, UDTs are typed-checked with a custom [RTTI](https://en.wikipedia.orki/Run-time_type_information) implementation.
+* Run-time signature check for Lua's API functions (debug build). Also, UDTs are typed-checked with a custom [RTTI](https://en.wikipedia.org/wiki/Run-time_type_information) implementation.
 * Crash screen (debug build).
 * Game window focus detection (for game-pause).
 * Real-time performance statistics (FPS and frame times) and resource usage (memory).
 * User-dependent I/O functions to load/store game data.
 * Configuration override through command-line arguments.
-
-## Inspirations
-
-**Tofu Engine** is an *original software*, result of the experience gained from ~30 years in programming on a broad range of platforms (some concept even stems back to *ancient* platforms like the [Amiga](https://en.wikipedia.org/wiki/Amiga) and the [SNES](https://en.wikipedia.org/wiki/Super_Nintendo_Entertainment_System), and *arcane* languages like [AMOS](https://en.wikipedia.org/wiki/AMOS_(programming_language)) and [Blitz BASIC 2](https://en.wikipedia.org/wiki/Blitz_BASIC)). However, it has also been influenced by modern similar/other softwares in one way or another.

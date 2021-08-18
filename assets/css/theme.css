@@ -65,9 +65,18 @@ hr {
 
 blockquote {
   color: var(--gray-50);
-  margin: 0;
-  max-width: 24em;
-  margin-left: 0.5em;
+  margin: 10px 0;
+  padding-left: 1em;
+  font-style: italic;
+  border-left: 2px dashed var(--gray-20);
+}
+
+p + blockquote {
+  margin-top: 20px;
+}
+
+blockquote + p {
+  margin-top: 20px;
 }
 
 date {
