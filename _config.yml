@@ -1,16 +1,16 @@
 # Site settings
-title: "#tofuengine"
+title: "Tofu Engine"
 logo_url: "/assets/images/logo.png"
 email: marco.lizza@gmail.com
 description: ~ a 2D game engine w/ an eco-friendly pixel-art retro-soul ~
 url: "" # the base hostname & protocol for your site
 #url: "http://localhost:4000" # the base hostname & protocol for your site
-baseurl: "" # the subpath of your site, e.g. /blog/
+base_url: "" # the subpath of your site, e.g. /blog/
 
 author: # Author details
   name: Marco Lizza
   email: marco.lizza@gmail.com
-  url: https://about.me/marco.lizza
+  url: https://about.me/marco.lizza/
   copyright: "&copy; Copyright 2019-2021 by Marco Lizza"
 
 defaults:

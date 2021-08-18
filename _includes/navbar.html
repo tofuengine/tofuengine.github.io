@@ -1,5 +1,5 @@
 <nav>
-  <a href="{{ site.baseurl }}/"><img src="{{ site.logo_url }}" class="logo" alt="{{ site.title }}" /></a>
+  <a href="{{ site.base_url }}/"><img src="{{ site.logo_url }}" class="logo" alt="{{ site.title }}" /></a>
   <section>
     <h2>guides</h2>
     <ul>
@@ -7,7 +7,7 @@
     {% for page in guides %}
     {% if page.category == "guide" %}
       <li>
-        <a href="{{ page.url | prepend: site.baseurl | prepend: site.url }}">
+        <a href="{{ page.url | prepend: site.base_url | prepend: site.url }}">
           {{ page.title }}
         </a>
       </li>
@@ -28,7 +28,7 @@
     <h3>{{ current_ns }}</h3>
     {% endif %}
     <li>
-      <a href="{{ page.url | prepend: site.baseurl | prepend: site.url }}">
+      <a href="{{ page.url | prepend: site.base_url | prepend: site.url }}">
         {{ page.title }}
       </a>
     </li>
