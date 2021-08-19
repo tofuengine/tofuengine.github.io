@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: module
 category: module
 namespace: tofu.core
 title: Math
@@ -13,9 +13,9 @@ local Math = require("tofu.core").Math
 
 ## Constants
 
-### Math.**SINCOS_PERIOD**
+### Math.**SINCOS_PERIOD** : integer
 
-### Math.**EPSILON**
+### Math.**EPSILON** : number
 
 `__FLT_EPSILON__`
 

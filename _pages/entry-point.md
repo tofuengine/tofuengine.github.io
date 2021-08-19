@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: guide
 category: guide
 title: Entry Point
 permalink: /guides/entry-point/

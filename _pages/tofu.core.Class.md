@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: module
 category: module
 namespace: tofu.core
 title: Class
@@ -13,13 +13,13 @@ local Class = require("tofu.core").Class
 
 ## Description
 
-As you might know, Lua is not an out-of-the-box object oriented programming language. It is, however, *multi-paradigm* in nature and with some clever usage of [metatables](https://www.lua.org/pil/13.html), classes can be implemented fairly easy. **Tofu Engine** offers this facility with the `tofu.core.Class` module, so that you won't need to include a [full-fledge OOP library](https://github.com/kikito/middleclass) in each and every project.
+As you might know, Lua is not an out-of-the-box object oriented programming language. It is, however, *multi-paradigm* in nature and with some clever usage of [metatables](https://www.lua.org/pil/13.html), classes can be implemented fairly easy. **Tofu Engine** offers this facility with the `tofu.core.Class` module, so that you won't need to include a [full-fledged OOP library](https://github.com/kikito/middleclass) every project.
 
 ## Functions
 
-### Class.**define**()
+### Class.**define**() : table
 
-Defines a new class. The newly defined class will have a variable-arguments static method `new(...)` that will optionally class the `__ctor(..)` method to initialize the instance.
+Defines a class. The newly defined class will have a variable-arguments static method `new(...)` that is to be used to create instances of the class. The option method `__ctor(..)` is called upon instance creation.
 
 ```lua
 local Counter = Class.define()
@@ -35,7 +35,7 @@ end
 return Counter
 ```
 
-### Class.**borrow**(proto, model, criteria = nil)
+### Class.**borrow**(proto : table, model : table, criteria = nil : string)
 
 Copies all the references from `model` to `proto`, much like as the concept of [mixin](https://en.wikipedia.org/wiki/Mixin), to *borrow* the functionalities.
 
@@ -43,7 +43,7 @@ Copies all the references from `model` to `proto`, much like as the concept of [
 
 `model` can either any table (not necessarily a class created with `Class.define(...)`).
 
-`criteria` is an optional argument specifying the behaviour when a `model` function with the same identifier is already present in class `proto`. If set to `extend` the existing function is called **before** the new one; if set to `chain` the existing function is called **after** the new one; if set to `replace` the existing function is replaced with the new one.
+`criteria` is an optional argument specifying the behaviour when a `model` function with the same identifier is already present in class `proto`. If set to `extend` the existing function is called **before** the new one; if set to `chain` the existing function is called **after** the new one; if set to `replace` the existing function is replaced with the new one. Please note that the `__ctor()` function has a special treatment as it is always extended.
 
 Any other variable (i.e. not of `function` type) present in `model` is ignored.
 
@@ -88,7 +88,3 @@ Hello from A!
 Hello from C!
 Hello from B!
 ```
-
-### Class.**dump**(table)
-
-This is mostly a *debug* function that pretty-prints and dumps a table content to console.

@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: module
 category: module
 namespace: tofu.core
 title: Log
@@ -10,8 +10,6 @@ permalink: /modules/tofu.core/Log/
 ```lua
 local Log = require("tofu.core").Log
 ```
-
-## Rationale
 
 ## Functions
 
@@ -34,3 +32,7 @@ to string by (implicitly) calling the `tostring()` function.
 
 Dump the function arguments to console, with `FATAL` severity level. Each argument is automatically converted
 to string by (implicitly) calling the `tostring()` function.
+
+### Log.**dump**(table : table)
+
+Pretty-prints and dumps a table content to console, with `INFO` severity level.

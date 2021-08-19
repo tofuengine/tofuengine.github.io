@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: module
 category: module
 namespace: tofu.util
 title: Arrays

@@ -167,14 +167,14 @@ nav h2 {
 
 nav h3 {
   color: var(--gray-80);
-  font: 500 12px var(--subheader);
+  font: 500 11px var(--subheader);
   text-transform: lowercase;
   font-style: italic;
   letter-spacing: 2px;
   text-align: right;
   float: right;
   border-top: solid 1px var(--gray-20);
-  width: 160px;
+  width: 100px;
   margin: 0;
 }
 
@@ -212,7 +212,7 @@ h2 code {
 }
 
 h3 {
-  font: 18px var(--body);
+  font: 16px var(--code);
   margin: 24px 0 0 0;
   color: var(--link);
 }
@@ -240,6 +240,14 @@ main {
 main .intro {
   border-bottom: solid 1px var(--gray-10);
   margin-bottom: -0.5em;
+}
+
+main h4 {
+  float: right;
+  color: var(--gray-50);
+  font-family: var(--code);
+  font-size: 14px;
+  font-weight: 400;
 }
 
 main h2 {
@@ -284,7 +292,7 @@ pre {
   background-color: var(--code-bg) !important;
   color: var(--code-color) !important;
   font-family: var(--code) !important;
-  font-size: 13px !important;
+  font-size: 14px !important;
 }
 
 code {

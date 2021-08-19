@@ -3,38 +3,22 @@
   <section>
     <h2>guides</h2>
     <ul>
-    {% assign guides = site.pages | sort:"order" %}
-    {% for page in guides %}
-    {% if page.category == "guide" %}
-      <li>
-        <a href="{{ page.url | prepend: site.base_url | prepend: site.url }}">
-          {{ page.title }}
-        </a>
-      </li>
-    {% endif %}
-    {% endfor %}
+    {%- assign guides = site.pages | where:"category","guide" | sort:"order" -%}
+    {%- for page in guides %}
+      <li><a href="{{ page.url | prepend: site.base_url | prepend: site.url }}">{{ page.title }}</a></li>
+    {%- endfor %}
     </ul>
   </section>
   <section>
     <h2>modules</h2>
-    {% for page in site.pages %}
-    {% if page.category == "module" %}
-    {% capture current_ns %}{{ page.namespace }}{% endcapture %}
-    {% if current_ns != previous_ns %}
-    {% if previous_ns %}
-    </ul>
-    {% endif %}
+    {%- assign groups = site.pages | where:"category","module" | sort:"title" | group_by:"namespace" | sort:"name" -%}
+    {%- for group in groups %}
     <ul>
-    <h3>{{ current_ns }}</h3>
-    {% endif %}
-    <li>
-      <a href="{{ page.url | prepend: site.base_url | prepend: site.url }}">
-        {{ page.title }}
-      </a>
-    </li>
-    {% capture previous_ns %}{{ current_ns }}{% endcapture %}
-    {% endif %}
-    {% endfor %}
+      <h3>{{ group.name }}</h3>
+      {%- for page in group.items %}
+      <li><a href="{{ page.url | prepend: site.base_url | prepend: site.url }}">{{ page.title }}</a></li>
+      {%- endfor %}
     </ul>
+    {%- endfor %}
   </section>
 </nav>
