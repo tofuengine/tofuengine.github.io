@@ -212,7 +212,7 @@ h2 code {
 }
 
 h3 {
-  font: 16px var(--code);
+  font: 18px var(--body);
   margin: 24px 0 0 0;
   color: var(--link);
 }
@@ -242,12 +242,8 @@ main .intro {
   margin-bottom: -0.5em;
 }
 
-main h4 {
-  float: right;
-  color: var(--gray-50);
-  font-family: var(--code);
-  font-size: 14px;
-  font-weight: 400;
+main p {
+  text-align: justify;
 }
 
 main h2 {
@@ -255,6 +251,25 @@ main h2 {
   position: relative;
   padding-bottom: 0.5em;
   border-bottom: solid 1px var(--gray-10);
+}
+
+main h3 {
+  font: 16px/25px var(--code);
+  padding-bottom: 0.5em;
+/*  border-bottom: solid 1px var(--gray-10); */
+}
+
+main h3::before {
+  content: "§";
+  margin-right: 4px;
+}
+
+main h4 { /* FIXME: use a class? */
+  float: right;
+  color: var(--gray-30);
+  font-family: var(--code);
+  font-size: 14px;
+  font-weight: 400;
 }
 
 a:hover {
@@ -280,7 +295,7 @@ p {
 }
 
 p + p {
-  margin-top: 20px;
+/*  margin-top: 20px; */
 }
 
 div .highlighter-rouge {
@@ -304,6 +319,7 @@ code {
 
 pre code {
   border: none;
+  padding: 0;
 }
 
 pre {

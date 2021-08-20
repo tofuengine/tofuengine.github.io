@@ -45,5 +45,6 @@ Tells whether the game-engine is the current active (i.e. focused) window. Can b
 
 Signals and halts the game-engine execution.
 
-[^1]: These functions are available only in the `DEBUG` build.
+---
 
+[^1]: These functions are available only in the `DEBUG` build.
