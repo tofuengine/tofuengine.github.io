@@ -11,6 +11,12 @@ permalink: /modules/tofu.io/File/
 local File = require("tofu.io").File
 ```
 
-## Constants
+## Description
 
 ## Functions
+
+### File.**load**(name : string, mode = "string" : string) : string
+
+### File.**store**(name : string, data : string, mode : string)
+
+> This function saves a file into the local user-dependent storage. The mount points aren't modified.

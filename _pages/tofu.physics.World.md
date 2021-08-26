@@ -4,7 +4,6 @@ category: module
 namespace: tofu.physics
 title: World
 permalink: /modules/tofu.physics/World/
-published: false
 ---
 # Usage
 
