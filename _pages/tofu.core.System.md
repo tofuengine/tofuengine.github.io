@@ -21,9 +21,15 @@ Returns a `table` with the command-line arguments passed to the engine executabl
 
 Return a *tuple* of three values stating the run-time version of the game engine (major, minor, and revision).
 
+### System.**clock**() : number
+
+Returns the current internal clock in seconds. This is totally unrelated to `System.time()` as it advances autonomously by means of the system [real-time clock](https://en.wikipedia.org/wiki/Real-time_clock). A typical usage is to profile some piece of Lua code (likewise `[os.clock()](https://www.lua.org/manual/5.4/manual.html#pdf-os.clock)`).
+
 ### System.**time**() : number
 
 Returns the elapsed amount of seconds since the launch of the game-engine.
+
+> The timer advances on constant steps, according to the configured engine frequency. Also, it is kept constant during the engine callbacks functions.
 
 ### System.**fps**() : integer
 

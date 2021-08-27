@@ -139,6 +139,10 @@ Converts an angle, expressed in [radians](https://en.wikipedia.org/wiki/Radian) 
 
 Converts a rotation, expressed as integer in the range `[0, 511]` by the value `angle`, to an angle expressed in radians.
 
+### Math.**invsqrt**(x : number) : number
+
+Calculates the [fast inverse square root](https://en.wikipedia.org/wiki/Fast_inverse_square_root) approximation.
+
 ### Math.**rotate**(x : number, y : number, rotation : integer) : number, number
 
 Calculates the coordinates of the point `<x, y>` when two-dimensionally rotated by a rotation `rotation` (in the integer periodic range `[0, 511]`).
