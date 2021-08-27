@@ -6,6 +6,7 @@ description: ~ a 2D game engine w/ an eco-friendly pixel-art retro-soul ~
 url: "" # the base hostname & protocol for your site
 #url: "http://localhost:4000" # the base hostname & protocol for your site
 base_url: "" # the subpath of your site, e.g. /blog/
+release: v0.10.0
 
 author: # Author details
   name: Marco Lizza
