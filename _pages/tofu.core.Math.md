@@ -141,7 +141,7 @@ Converts a rotation, expressed as integer in the range `[0, 511]` by the value `
 
 ### Math.**invsqrt**(x : number) : number
 
-Calculates the [fast inverse square root](https://en.wikipedia.org/wiki/Fast_inverse_square_root) approximation.
+Calculates the [inverse square root](https://en.wikipedia.org/wiki/Fast_inverse_square_root) of `x`, using Quake's *fast* approximation.
 
 ### Math.**rotate**(x : number, y : number, rotation : integer) : number, number
 

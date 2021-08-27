@@ -23,7 +23,7 @@ Return a *tuple* of three values stating the run-time version of the game engine
 
 ### System.**clock**() : number
 
-Returns the current internal clock in seconds. This is totally unrelated to `System.time()` as it advances autonomously by means of the system [real-time clock](https://en.wikipedia.org/wiki/Real-time_clock). A typical usage is to profile some piece of Lua code (likewise `[os.clock()](https://www.lua.org/manual/5.4/manual.html#pdf-os.clock)`).
+Returns the current internal clock in seconds. This is totally unrelated to `System.time()` as it advances autonomously by means of the system [real-time clock](https://en.wikipedia.org/wiki/Real-time_clock). A typical usage is to profile some piece of Lua code (like the standard [`os.clock()`](https://www.lua.org/manual/5.4/manual.html#pdf-os.clock) function).
 
 ### System.**time**() : number
 
