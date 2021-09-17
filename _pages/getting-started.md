@@ -27,7 +27,7 @@ fullscreen=false
 exit-key-enabled=true
 ```
 
-More details about the available configuration settings can be found in the [reference](/guides/configuration-file). For the moment, all we need to know is that with this configuration file we are going to request a `320x240` virtual-screen that will be auto-scaled to fit the physical display as much as possible (while retaining windowed-mode, i.e. we aren't going full-screen), window-title will be set to `Hello, Tofu!`, and *exit-key* (i.e. the `ESCAPE` keyboard key) will be enabled.
+More details about the available configuration settings can be found in the [reference](/guides/project-structure). For the moment, all we need to know is that with this configuration file we are going to request a `320x240` virtual-screen that will be auto-scaled to fit the physical display as much as possible (while retaining windowed-mode, i.e. we aren't going full-screen), window-title will be set to `Hello, Tofu!`, and *exit-key* (i.e. the `ESCAPE` keyboard key) will be enabled.
 
 Now it's time to tackle the program entry-point. We need to write a Lua script returning a "class" adhering to a specific prototype (more on this [later](/guides/entry-point)). For the moment, just save the following script in the same folder you picked for the configuration file and name it `main.lua`.
 

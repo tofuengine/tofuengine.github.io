@@ -141,7 +141,13 @@ Converts a rotation, expressed as integer in the range `[0, 511]` by the value `
 
 ### Math.**invsqrt**(x : number) : number
 
-Calculates the [inverse square root](https://en.wikipedia.org/wiki/Fast_inverse_square_root) of `x`, using Quake's *fast* approximation.
+Calculates the *inverse square root* of `x` as `1.0f / sqrtf(x)`. This can be optimized with the plain Lua code `x ^ -0.5`, however.
+
+### Math.**finvsqrt**(x : number) : number
+
+Calculates the *inverse square root* of `x`, using the famous [Quake's fast approximation](https://en.wikipedia.org/wiki/Fast_inverse_square_root).
+
+> This function has been implemented mostly as **easter egg**. In a typical usage scenario, it should more efficient to calculate the inverse square root of a number `x` in native Lua code, as `x ^ -0.5` or `1 / math.sqrt(x)` (this former saves from the Lua-to-C context switch, but the latter is a specialized version).
 
 ### Math.**rotate**(x : number, y : number, rotation : integer) : number, number
 

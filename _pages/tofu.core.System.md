@@ -21,6 +21,19 @@ Returns a `table` with the command-line arguments passed to the engine executabl
 
 Return a *tuple* of three values stating the run-time version of the game engine (major, minor, and revision).
 
+### System.**information**() : table
+
+Return a *table* holding information about the current machine, with four string fields: `system`, `release`, `version` and `architecture`. An example table is the following:
+
+```lua
+{
+  system = "Linux",
+  release = "5.11.0-34-generic",
+  version = "#36-Ubuntu SMP Thu Aug 26 19:22:09 UTC 2021",
+  architecture = "x86_64"
+}
+```
+
 ### System.**clock**() : number
 
 Returns the current internal clock in seconds. This is totally unrelated to `System.time()` as it advances autonomously by means of the system [real-time clock](https://en.wikipedia.org/wiki/Real-time_clock). A typical usage is to profile some piece of Lua code (like the standard [`os.clock()`](https://www.lua.org/manual/5.4/manual.html#pdf-os.clock) function).
@@ -30,6 +43,10 @@ Returns the current internal clock in seconds. This is totally unrelated to `Sys
 Returns the elapsed amount of seconds since the launch of the game-engine.
 
 > The timer advances on constant steps, according to the configured engine frequency. Also, it is kept constant during the engine callbacks functions.
+
+### System.**date**(format = "%Y-%m-%dT%H:%M:%S" : string, timezone = "local" : string) : string
+
+Returns the current date as string, according to the `format` [specification](https://man7.org/linux/man-pages/man3/strftime.3.html). According to the `timezone` argument, the date can be either interpreted according to the `local` timezone or `gmt`.
 
 ### System.**fps**() : integer
 

@@ -33,7 +33,7 @@ The engine is in *perpetual work-in-progress* state, with new features being add
 * Automatic nearest-matching-color palette indexing of [RGBA8888](https://en.wikipedia.org/wiki/RGBA_color_model) images.
 * Per-color re-indexing (*shifting*) and transparency, affecting drawing operations (both per-draw and during VRAM transfer).
 * Multiple canvas, with drawing state stack support.
-* SNES' Mode7-like transforms, with scanline based ([HDMA](https://wiki.superfamicom.org/grog's-guide-to-dma-and-hdma-on-the-snes)) changes.
+* SNES' Mode7-like transforms, with scan-line based ([HDMA](https://wiki.superfamicom.org/grog's-guide-to-dma-and-hdma-on-the-snes)) changes.
 * Amiga's Copper-like programs, with pixel-wide resolution.
 * Image programmable copy functions, to implement *script-shaders*.
 * Image stencil copy function, with used definable *threshold function*.
@@ -47,7 +47,7 @@ The engine is in *perpetual work-in-progress* state, with new features being add
 * Out-of-the-box timers support.
 * Ready-to-use 2D vector class and higher-order iterators.
 * Customizable application icon.
-* Support for *archived games*, via custom "packed" format (w/ optional encryption). Multiple archives are supported, with root folder ovde.
+* Support for *archived games*, via custom "packed" format (w/ optional encryption). Multiple archives are supported, with root folder override.
 * Resource manager w/ caching I/O and single instance object loading/reuse.
 * Game-controller support (w/ D-PAD and mouse emulation) w/ keyboard/mouse fallback if not available.
 * Screen capture and recording.
