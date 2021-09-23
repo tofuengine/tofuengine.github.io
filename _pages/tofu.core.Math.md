@@ -153,17 +153,13 @@ Calculates the *inverse square root* of `x`, using the famous [Quake's fast appr
 
 Calculates the coordinates of the point `<x, y>` when two-dimensionally rotated by a rotation `rotation` (in the integer periodic range `[0, 511]`).
 
-### Math.**wave**(name : string) : function
-
-Returns a wave function, with period `1.0`, that maps a floating-point value to the range `[-1, 1]`. `name` can be one of the following values: `sine`, `square`, `triangle`, `sawtooth`.
-
-### Math.**wave**(name : string, period : number, amplitude = 1.0 : number) : function
+### Math.**wave**(name : string, period = 1.0 : number, amplitude = 1.0 : number) : function
 
 Returns a wave function, with period `period`, that maps a floating-point value to the range `[-amplitude, amplitude]`. `name` can be one of the following values: `sine`, `square`, `triangle`, `sawtooth`.
 
-### Math.**tweener**(name : string) : function
+### Math.**tweener**(name : string, duration = 1.0 : number, from = 0.0 : number, to = 1.0 : number) : function
 
-Returns an [easing function](https://easings.net/) that transforms a floating-point according to a specified rate of change. The input and output range aren't fixed, but they are generally used (and well defined) in the range `[0, 1]`. `name` can be one of the values in the following table:
+Returns an [easing function](https://easings.net/) that transforms a floating-point according to a specified rate of change. The input range is `[0, duration`]. The output range is `[from, to]`. `name` can be one of the values in the table below.
 
 | :---                 | :---                 | :---                 |
 | `linear`             |                      |                      |
@@ -177,14 +173,6 @@ Returns an [easing function](https://easings.net/) that transforms a floating-po
 | `elastic-in`         | `elastic-out`        | `elastic-in-out`     |
 | `back-in`            | `back-out`           | `back-in-out`        |
 | `bounce-out`         | `bounce-in`          | `bounce-in-out`      |
-
-### Math.**tweener**(name : string, duration : number) : function
-
-Returns an [easing function](https://easings.net/) that transforms a floating-point according to a specified rate of change. The input range is `[0, duration`]. The output range isn't fixed, but is generally used (and well defined) in the range `[0, 1]`. `name` can be one of the values in the table above.
-
-### Math.**tweener**(name : string, duration : number, from : number, to : number) : function
-
-Returns an [easing function](https://easings.net/) that transforms a floating-point according to a specified rate of change. The input range is `[0, duration`]. The output range is `[from, to]`. `name` can be one of the values in the table above.
 
 ### Math.**noise**(name : string) : function
 
