@@ -22,6 +22,8 @@ local Player = require("lib/player") -- ... or UN*X-like folder separator.
 local background = Canvas.new("assets/background.png") -- We can't use the `.` here, but the path separator.
 ```
 
+When using Lua's `require` function to load custom modules both `.` and `/` are valid path-separators. It boils down to a matter of personal choice, but *be consistent* in using one or another or the module could be potentially be duplicated in the modules' *preloaded* table.
+
 ## Sandbox
 
 ## Packed files

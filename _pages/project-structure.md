@@ -68,11 +68,12 @@ frames-limit=0
 
 ### system
 
-* `identity : string` (default to the alphanumeric representation of the display title)
+* `identity : string`
+  * (default to the alphanumeric representation of the display title)
 * `version : string` (default to the current engine version)
 * `debug : boolean` (default to `true`)
 * `icon : string` (default to `icon.png`)
-* `mappings : string` (defaul to `gamecontrollerdb.txt`)
+* `mappings : string` (default to `gamecontrollerdb.txt`)
 
 ### display
 
