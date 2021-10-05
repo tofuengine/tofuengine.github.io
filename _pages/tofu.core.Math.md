@@ -152,28 +152,3 @@ Calculates the *inverse square root* of `x`, using the famous [Quake's fast appr
 ### Math.**rotate**(x : number, y : number, rotation : integer) : number, number
 
 Calculates the coordinates of the point `<x, y>` when two-dimensionally rotated by a rotation `rotation` (in the integer periodic range `[0, 511]`).
-
-### Math.**wave**(name : string, period = 1.0 : number, amplitude = 1.0 : number) : function
-
-Returns a wave function, with period `period`, that maps a floating-point value to the range `[-amplitude, amplitude]`. `name` can be one of the following values: `sine`, `square`, `triangle`, `sawtooth`.
-
-### Math.**tweener**(name : string, duration = 1.0 : number, from = 0.0 : number, to = 1.0 : number) : function
-
-Returns an [easing function](https://easings.net/) that transforms a floating-point according to a specified rate of change. The input range is `[0, duration`]. The output range is `[from, to]`. `name` can be one of the values in the table below.
-
-| :---                 | :---                 | :---                 |
-| `linear`             |                      |                      |
-| `quadratic-in`       | `quadratic-out`      | `quadratic-in-out`   |
-| `cubic-in`           | `cubic-out`          | `cubic-in-out`       |
-| `quartic-in`         | `quartic-out`        | `quartic-in-out`     |
-| `quintic-in`         | `quintic-out`        | `quintic-in-out`     |
-| `sine-in`            | `sine-out`           | `sine-in-out`        |
-| `circular-in`        | `circular-out`       | `circular-in-out`    |
-| `exponential-in`     | `exponential-out`    | `exponential-in-out` |
-| `elastic-in`         | `elastic-out`        | `elastic-in-out`     |
-| `back-in`            | `back-out`           | `back-in-out`        |
-| `bounce-out`         | `bounce-in`          | `bounce-in-out`      |
-
-### Math.**noise**(name : string) : function
-
-Returns a variable-arity function that evaluates to a noise generator. The function can bel called with up to **three** floating-point arguments and returns a value in the range `[0, 1]`. `name` can be either `perlin` or `simplex`.

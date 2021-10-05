@@ -70,4 +70,4 @@ Signals and halts the game-engine execution.
 
 ---
 
-[^1]: These functions are available only in the `DEBUG` build.
+[^1]: Available in the `DEBUG` build only.
