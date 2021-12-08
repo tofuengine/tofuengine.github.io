@@ -22,6 +22,7 @@ The engine is in *perpetual work-in-progress* state, with new features being add
 * Fully scripted in [Lua](https://www.lua.org/).
 * Straight multimedia support, no intermediate third-party libraries ([OpenGL 2.1](https://en.wikipedia.org/wiki/OpenGL) required).
 * Windowed/fullscreen display with best-fit integer automatic scaling.
+* Array of predefined common/famous resolutions (e.g. C64, Capcom's arcades, Nintendo DS, Sony PSP, etc...).
 * Internal software renderer. OpenGL is used only to present the framebuffer to the user (and apply post-process effects).
 * Fixed- and variable-size *Blitter OBjects* drawing with rotation/scaling/flipping.
 * Support for both proportional and non-proportional bitmap based fonts (alphabet subset can be specified, if required).
