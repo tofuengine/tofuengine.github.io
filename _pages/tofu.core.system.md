@@ -2,13 +2,13 @@
 layout: module
 category: module
 namespace: tofu.core
-title: System
-permalink: /modules/tofu.core/System/
+title: system
+permalink: /modules/tofu.core.system/
 ---
 # Usage
 
 ```lua
-local System = require("tofu.core").System
+local System = require("tofu.core.system")
 ```
 
 ## Functions

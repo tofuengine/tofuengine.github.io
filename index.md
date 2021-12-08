@@ -44,7 +44,7 @@ The engine is in *perpetual work-in-progress* state, with new features being add
 * On-the-fly audio mixing w/ per voice looping/panning/balance/gain/speed control.
 * Static and streamed audio data playback (FLAC format).
 * Module playback support (MOD, S3M, XM, and IT).
-* Out-of-the-box timers support.
+* Programmable timers support.
 * Ready-to-use 2D vector class and higher-order iterators.
 * Customizable application icon.
 * Support for *archived games*, via custom "packed" format (w/ optional encryption). Multiple archives are supported, with root folder override.
@@ -53,6 +53,7 @@ The engine is in *perpetual work-in-progress* state, with new features being add
 * Screen capture and recording.
 * Framebuffer offsetting (e.g. for screen-shaking effect).
 * Out-of-the-box 'tweening functions support (optimized [Penner's](http://robertpenner.com/easing/) set).
+* Noise generators (perlin, simple, and cellular).
 * Logging facility (w/ selectable severity level).
 * Run-time signature check for Lua's API functions (debug build). Also, UDTs are typed-checked with a custom [RTTI](https://en.wikipedia.org/wiki/Run-time_type_information) implementation.
 * Crash screen (debug build).

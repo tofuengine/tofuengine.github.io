@@ -2,13 +2,13 @@
 layout: module
 category: module
 namespace: tofu.core
-title: Math
-permalink: /modules/tofu.core/Math/
+title: math
+permalink: /modules/tofu.core.math/
 ---
 # Usage
 
 ```lua
-local Math = require("tofu.core").Math
+local Math = require("tofu.core.math")
 ```
 
 ## Constants

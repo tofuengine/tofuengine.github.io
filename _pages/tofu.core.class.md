@@ -2,13 +2,13 @@
 layout: module
 category: module
 namespace: tofu.core
-title: Class
-permalink: /modules/tofu.core/Class/
+title: class
+permalink: /modules/tofu.core.class/
 ---
 # Usage
 
 ```lua
-local Class = require("tofu.core").Class
+local Class = require("tofu.core.class")
 ```
 
 ## Description

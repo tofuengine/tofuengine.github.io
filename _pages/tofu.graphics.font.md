@@ -2,13 +2,13 @@
 layout: module
 category: module
 namespace: tofu.graphics
-title: Canvas
-permalink: /modules/tofu.graphics/Canvas/
+title: font
+permalink: /modules/tofu.graphics.font/
 ---
 # Usage
 
 ```lua
-local Canvas = require("tofu.graphics").Canvas
+local Font = require("tofu.graphics.font")
 ```
 
 ## Constants

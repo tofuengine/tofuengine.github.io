@@ -33,10 +33,10 @@ Now it's time to tackle the program entry-point. We need to write a Lua script r
 
 ```lua
 -- Include the modules we'll be using.
-local Class = require("tofu.core").Class
-local Canvas = require("tofu.graphics").Canvas
-local Display = require("tofu.graphics").Display
-local Font = require("tofu.graphics").Font
+local Class = require("tofu.core.class")
+local Canvas = require("tofu.graphics.canvas")
+local Display = require("tofu.graphics.display")
+local Font = require("tofu.graphics.font")
 
 -- The entry point is a class, created with a helper function.
 local Main = Class.define()
@@ -46,7 +46,7 @@ local MESSAGE <const> = "Hello, Tofu!"
 
 function Main:__ctor()
   -- Create and load a predefined palette, we choose Pico-8's one.
-  local palette = Palette.new("pico-8")
+  local palette = Palette.default("pico-8")
   Display.palette(palette)
 
   -- Create a default font, palette color `0` as background and `15` as foreground.

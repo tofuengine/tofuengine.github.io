@@ -2,13 +2,13 @@
 layout: module
 category: module
 namespace: tofu.graphics
-title: Bank
-permalink: /modules/tofu.graphics/Bank/
+title: bank
+permalink: /modules/tofu.graphics.bank/
 ---
 # Usage
 
 ```lua
-local Bank = require("tofu.graphics").Bank
+local Bank = require("tofu.graphics.bank")
 ```
 
 ## Constants
@@ -21,11 +21,11 @@ This constant is used to reference the first cell in the bank. It is, practicall
 
 ### Bank.**new**(canvas : object, cells : string) : object
 
-Creates a new `Bank` object, using [`canvas`](/modules/tofu.graphics/Canvas/) as a sprite sheet. The logical positioning of the cells in the [sprite sheet](/guides/sprite-sheet/) is specified according to the content of the `cells` file.
+Creates a new `Bank` object, using [`canvas`](/modules/tofu.graphics.canvas/) as a sprite sheet. The logical positioning of the cells in the [sprite sheet](/guides/sprite-sheet/) is specified according to the content of the `cells` file.
 
 ### Bank.**new**(canvas : object, cell_width : number, cell_height : number) : object
 
-Creates a new `Bank` object, using [`canvas`](/modules/tofu.graphics/Canvas/) as a sprite sheet. The bank cells will have an equally constant size of `cell_width` by `cell_height` pixels.
+Creates a new `Bank` object, using [`canvas`](/modules/tofu.graphics.canvas/) as a sprite sheet. The bank cells will have an equally constant size of `cell_width` by `cell_height` pixels.
 
 ### Bank.**size**(cell_id : number, scale_x = 1.0: number, scale_y = scale_x : number) : number
 

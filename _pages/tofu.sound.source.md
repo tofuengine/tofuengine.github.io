@@ -2,13 +2,13 @@
 layout: module
 category: module
 namespace: tofu.sound
-title: Source
-permalink: /modules/tofu.sound/Source/
+title: source
+permalink: /modules/tofu.sound.source/
 ---
 # Usage
 
 ```lua
-local Source = require("tofu.sound").Source
+local Source = require("tofu.sound.source")
 ```
 
 ## Constants

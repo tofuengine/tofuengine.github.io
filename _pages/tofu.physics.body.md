@@ -2,14 +2,14 @@
 layout: module
 category: module
 namespace: tofu.physics
-title: Body
-permalink: /modules/tofu.physics/Body/
+title: body
+permalink: /modules/tofu.physics.body/
 state: preview
 ---
 # Usage
 
 ```lua
-local Body = require("tofu.physics").Body
+local Body = require("tofu.physics.body")
 ```
 
 ## Constants

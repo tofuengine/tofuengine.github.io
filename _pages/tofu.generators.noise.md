@@ -2,20 +2,20 @@
 layout: module
 category: module
 namespace: tofu.generators
-title: Noise
-permalink: /modules/tofu.generators/Noise/
+title: noise
+permalink: /modules/tofu.generators.noise/
 ---
 # Usage
 
 ```lua
-local Noise = require("tofu.generators").Noise
+local Noise = require("tofu.generators.noise")
 ```
 
 ## Constructors
 
-### Noise.**new**(type : string = 'perlin', seed : number = 0.0, frequency : number = 1.0) : object
+### Noise.**new**(type, seed : number = 0.0, frequency : number = 1.0) : object
 
-Constructs a noise generator given a type, a seed, and with a given frequency. `type` can be `perlin`, `simplex`, or `cellular`. When called without arguments, `perlin` will be used as a default type.
+Constructs a noise generator given a type, a seed, and with a given frequency. `type` can be `perlin`, `simplex`, or `cellular`. When called without arguments, `seed` and `frequency` will assume values `0.0` and `1.0`, respectively.
 
 ## Getters/Setters
 

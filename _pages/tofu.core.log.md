@@ -2,13 +2,13 @@
 layout: module
 category: module
 namespace: tofu.core
-title: Log
-permalink: /modules/tofu.core/Log/
+title: log
+permalink: /modules/tofu.core.log/
 ---
 # Usage
 
 ```lua
-local Log = require("tofu.core").Log
+local Log = require("tofu.core.log")
 ```
 
 ## Functions

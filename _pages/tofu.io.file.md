@@ -2,13 +2,13 @@
 layout: module
 category: module
 namespace: tofu.io
-title: File
-permalink: /modules/tofu.io/File/
+title: file
+permalink: /modules/tofu.io.file/
 ---
 # Usage
 
 ```lua
-local File = require("tofu.io").File
+local File = require("tofu.io.file")
 ```
 
 ## Functions

@@ -2,13 +2,13 @@
 layout: module
 category: module
 namespace: tofu.generators
-title: Tweener
-permalink: /modules/tofu.generators/Tweener/
+title: tweener
+permalink: /modules/tofu.generators.tweener/
 ---
 # Usage
 
 ```lua
-local Tweener = require("tofu.generators").Tweener
+local Tweener = require("tofu.generators.tweener")
 ```
 
 ## Constructors

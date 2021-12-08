@@ -2,13 +2,13 @@
 layout: module
 category: module
 namespace: tofu.util
-title: Arrays
-permalink: /modules/tofu.util/Arrays/
+title: grid
+permalink: /modules/tofu.util.grid/
 ---
 # Usage
 
 ```lua
-local Array = require("tofu.util").Array
+local Grid = require("tofu.util.grid")
 ```
 
 ## Constants

@@ -2,13 +2,13 @@
 layout: module
 category: module
 namespace: tofu.util
-title: Grid
-permalink: /modules/tofu.util/Grid/
+title: iterators
+permalink: /modules/tofu.util.iterators/
 ---
 # Usage
 
 ```lua
-local Grid = require("tofu.util").Grid
+local Iterators = require("tofu.util.iterators")
 ```
 
 ## Constants

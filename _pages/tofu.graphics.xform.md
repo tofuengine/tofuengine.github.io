@@ -2,13 +2,13 @@
 layout: module
 category: module
 namespace: tofu.graphics
-title: Display
-permalink: /modules/tofu.graphics/Display/
+title: xform
+permalink: /modules/tofu.graphics.xform/
 ---
 # Usage
 
 ```lua
-local Display = require("tofu.graphics").Display
+local XForm = require("tofu.graphics.xform")
 ```
 
 ## Constants

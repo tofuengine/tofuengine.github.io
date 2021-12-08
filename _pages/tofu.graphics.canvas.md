@@ -2,13 +2,13 @@
 layout: module
 category: module
 namespace: tofu.graphics
-title: Batch
-permalink: /modules/tofu.graphics/Batch/
+title: canvas
+permalink: /modules/tofu.graphics.canvas/
 ---
 # Usage
 
 ```lua
-local Batch = require("tofu.graphics").Batch
+local Canvas = require("tofu.graphics.canvas")
 ```
 
 ## Constants

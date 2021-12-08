@@ -2,13 +2,13 @@
 layout: module
 category: module
 namespace: tofu.util
-title: Iterators
-permalink: /modules/tofu.util/Iterators/
+title: vector
+permalink: /modules/tofu.util.vector/
 ---
 # Usage
 
 ```lua
-local Iterators = require("tofu.util").Iterators
+local Vector = require("tofu.util.vector")
 ```
 
 ## Constants

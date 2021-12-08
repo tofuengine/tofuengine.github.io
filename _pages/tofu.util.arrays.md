@@ -2,13 +2,13 @@
 layout: module
 category: module
 namespace: tofu.util
-title: Vector
-permalink: /modules/tofu.util/Vector/
+title: arrays
+permalink: /modules/tofu.util.arrays/
 ---
 # Usage
 
 ```lua
-local Vector = require("tofu.util").Vector
+local Array = require("tofu.util.array")
 ```
 
 ## Constants

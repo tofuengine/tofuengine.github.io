@@ -2,13 +2,13 @@
 layout: module
 category: module
 namespace: tofu.generators
-title: Wave
-permalink: /modules/tofu.generators/Wave/
+title: wave
+permalink: /modules/tofu.generators.wave/
 ---
 # Usage
 
 ```lua
-local Wave = require("tofu.generators").Wave
+local Wave = require("tofu.generators.wave")
 ```
 
 ## Constructors
