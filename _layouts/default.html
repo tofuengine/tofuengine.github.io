@@ -12,6 +12,7 @@
     <div class="page">
       {% include navbar.html %}
       <main>
+        <h4>{%- if page.state -%}({{ page.state }}) - {% endif -%}{{ site.release }}</h4>
         {{ content }}
       </main>
     </div>
