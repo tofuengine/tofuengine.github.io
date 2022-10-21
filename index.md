@@ -9,9 +9,9 @@ permalink: /
 
 It is entirely **self-contained**, as no additional runtime modules/libraries required (system-wide libraries excluded). Everything is bundled in the engine executable.
 
-It has been developed entirely in C99 (and some Lua scripts) on Linux, aiming to be as portable as possibile. This resulted in being **multi-platform** through *cross-compilation* (Windows, Linux and [Raspberry-Pi](https://www.raspberrypi.org/) systems are supported -- macOS isn't currently not, possibly WebAssembly will be in a not so distant future).
+It has been developed entirely in C99 (and some Lua scripts) on Linux, aiming to be as portable as possible. This resulted in being **multi-platform** through *cross-compilation* (Windows, Linux and [Raspberry-Pi](https://www.raspberrypi.org/) systems are supported -- macOS isn't currently on the radar, but a WebAssembly version might appear be in a not so distant future).
 
-The engine is in *perpetual work-in-progress* state, with new features being added and updates being applied. The *core* API, however, can be considered stable. 
+The engine is in *perpetual work-in-progress* state, with new features being added and updates being applied. The *core* API, however, can be considered stable.
 
 ## Inspirations
 
