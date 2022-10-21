@@ -3,24 +3,24 @@ layout: guide
 category: guide
 title: File System
 permalink: /guides/file-system/
-order: 3
+order: 5
 ---
 # File System
 
 For a **#tofuengine** application the file I/O is *sandboxed*. The application runs isolated from the real machine's file-system and can access only a limited part of it (and almost exclusively in read-only mode). This is because all paths are relative to the current game mount-points (more on this later). One cannot simple try and access files with a specific (absolute) path, or try and move to the parent folders (the `.` and `..` entries are forbidden, for simplicity, as not supported by packed files) as the operation is not allowed. As an additional safety measure, Lua's standard `io` and `os` libraries are unavailable. No harm can be done to the system, and no user private files can be accessed.
 
-File paths are platform agnostic, as the engine runtime adapts and maps them to the underling OS requirements (e.g. composing and converting the path separators as needed). However, UN*X convention is used to specify paths. For example, these are all valid paths
+File paths are platform agnostic, as the engine runtime adapts and maps them to the underling OS requirements (e.g. composing and converting the path separators as needed). However, UN*X's path-separator is **conventionally** used to specify paths. For example, these are all valid paths
 
 ```lua
-local Canvas = require("tofu.graphics").Canvas -- This is an internal pre-loaded module, `.` is required.
+local Canvas = require("tofu.graphics.canvas") -- This is an internal pre-loaded module, `.` is required.
 
-local Camera = require("lib.camera") -- Lua' standard module sub-path separator...
+local Camera = require("lib.camera") -- Lua's standard module sub-path separator...
 local Player = require("lib/player") -- ... or UN*X-like folder separator.
 
 local background = Canvas.new("assets/background.png") -- We can't use the `.` here, but the path separator.
 ```
 
-When using Lua's `require` function to load custom modules both `.` and `/` are valid path-separators. It boils down to a matter of personal choice, but *be consistent* in using one or another or the module could be potentially be duplicated in the modules' *preloaded* table.
+When using Lua's `require` function to load custom modules both `.` and `/` are valid path-separators. It boils down to a matter of personal choice, but *be consistent* when using one or another or **the module could be potentially be duplicated** in the modules' *preloaded* table.
 
 ## Mount points
 

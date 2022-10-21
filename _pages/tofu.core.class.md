@@ -19,7 +19,7 @@ As you might know, Lua is not an out-of-the-box object oriented programming lang
 
 ### Class.**define**() : table
 
-Defines a class. The newly defined class will have a variable-arguments static method `new(...)` that is to be used to create instances of the class. The option method `__ctor(..)` is called upon instance creation.
+Defines a class. The newly defined class will have a variable-arguments static method `new(...)` that is to be used to create instances of the class. The optional method `__ctor(..)` is called upon instance creation.
 
 ```lua
 local Counter = Class.define()

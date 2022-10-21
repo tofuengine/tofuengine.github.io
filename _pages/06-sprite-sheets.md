@@ -3,6 +3,8 @@ layout: guide
 category: guide
 title: Sprite Sheets
 permalink: /guides/sprite-sheets/
-order: 4
+order: 6
 ---
-# TBD
+# Sprite Sheets
+
+TBD
