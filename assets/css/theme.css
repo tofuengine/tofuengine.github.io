@@ -108,6 +108,7 @@ main {
   position: relative;
   margin: auto;
   display: block;
+  padding-bottom: 1em;
 }
 
 header {
