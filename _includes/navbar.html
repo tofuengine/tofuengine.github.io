@@ -4,8 +4,12 @@
     <h2>guides</h2>
     <ul>
     {%- assign guides = site.pages | where:"category","guide" | sort:"order" -%}
-    {%- for page in guides %}
-      <li><a href="{{ page.url | prepend: site.base_url | prepend: site.url }}">{{ page.title }}</a></li>
+    {%- for guide in guides %}
+      {% assign current = nil %}
+      {% if page.url == guide.url %}
+        {% assign current = 'current' %}
+      {% endif %}
+      <li><a class="{{ current }}" href="{{ guide.url | prepend: site.base_url | prepend: site.url }}">{{ guide.title }}</a></li>
     {%- endfor %}
     </ul>
   </section>
@@ -15,8 +19,12 @@
     {%- for group in groups %}
     <ul>
       <h3>{{ group.name }}</h3>
-      {%- for page in group.items %}
-      <li><a href="{{ page.url | prepend: site.base_url | prepend: site.url }}">{{ page.title }}</a></li>
+      {%- for item in group.items %}
+        {% assign current = nil %}
+        {% if page.url == item.url %}
+          {% assign current = 'current' %}
+        {% endif %}
+        <li><a class="{{ current }}" href="{{ item.url | prepend: site.base_url | prepend: site.url }}">{{ item.title }}</a></li>
       {%- endfor %}
     </ul>
     {%- endfor %}

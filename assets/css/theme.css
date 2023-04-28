@@ -233,6 +233,12 @@ a {
   cursor: pointer;
 }
 
+nav a.current::after {
+  content: "↵";
+  margin-left: 4px;
+  font-weight: bold;
+}
+
 main {
   margin-top: 2em;
   float: left;
