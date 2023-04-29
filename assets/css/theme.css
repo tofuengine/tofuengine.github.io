@@ -234,7 +234,7 @@ a {
 }
 
 nav a.current::after {
-  content: "↵";
+  content: "\23CE";
   margin-left: 4px;
   font-weight: bold;
 }
